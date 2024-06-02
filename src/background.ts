@@ -63,3 +63,57 @@ chrome.runtime.onMessage.addListener(function (request) {
     }
   })()
 })
+
+
+//TODO: Sending Data to Azure Functions and Handling Background Tasks
+
+/*
+chrome.runtime.onInstalled.addListener(function (details) {
+  void (async () => {
+    if (details.reason === 'install') {
+      const detectors = {
+        'credit-card-number': true,
+        name: true,
+        'email-address': true,
+        'phone-number': true,
+        address: true,
+        'social-security-number': true,
+        'secret-key': true
+      };
+      await chrome.storage.sync.set(detectors);
+      await chrome.storage.sync.set({ totalDetections: 0 });
+    }
+  })();
+});
+
+chrome.runtime.onMessage.addListener(function (request, sender) {
+  void (async () => {
+    if (request.detections !== undefined && sender.tab?.id !== undefined) {
+      const detections = request.detections;
+      const badgeText = await chrome.action.getBadgeText({ tabId: sender.tab.id });
+      const badge = badgeText !== '' ? parseInt(badgeText) : 0;
+
+      if (badge !== detections && badge < detections) {
+        const query = await chrome.storage.sync.get(['totalDetections']);
+        let totalDetections = query.totalDetections;
+        totalDetections += detections - badge;
+        await chrome.storage.sync.set({ totalDetections });
+      }
+
+      void chrome.action.setBadgeBackgroundColor({ color: '#DA2700' });
+      void chrome.action.setBadgeText({ tabId: sender.tab.id, text: detections > 0 ? detections.toString() : '' });
+    }
+  })();
+});
+
+chrome.runtime.onMessage.addListener(function (request) {
+  void (async () => {
+    if (request.detectorToggle !== undefined) {
+      const detector = request.detectorToggle;
+      const query = await chrome.storage.sync.get([detector]);
+      const detectorState = query[detector];
+      await chrome.storage.sync.set({ [detector]: !detectorState });
+    }
+  })();
+});
+*/
