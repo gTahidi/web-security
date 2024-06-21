@@ -19,7 +19,7 @@
     "compromise": "^14.9.0",
     "luhn": "^2.4.1",
     "phone": "^3.1.37",
-    "sweetalert2": "^11.7.20"
+    "sweetalert2": "^11.12.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.7",
@@ -37,7 +37,7 @@
     "eslint-plugin-n": "^16.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "glob": "^7.1.6",
-    "postcss": "^8.4.28",
+    "postcss": "^8.4.31",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.4.1",
     "rimraf": "^3.0.2 ",
@@ -46,7 +46,7 @@
     "ts-jest": "^27.1.5",
     "ts-loader": "^8.0.0",
     "typescript": "^4.9.5",
-    "vite": "^4.3.8",
+    "vite": "^4.5.3",
     "vite-tsconfig-paths": "^4.2.0"
   },
   "prettier": {
